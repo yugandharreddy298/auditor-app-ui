@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Decoraters';
+
+home="this is my home"
 }
+
