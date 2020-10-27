@@ -1,0 +1,36 @@
+
+
+
+
+   <div class="container">
+ <h2> Login Form</h2>
+	   
+	<form [formGroup]="loginForm" (ngSubmit)="userLogin(loginForm);">
+	 
+ 
+	 <div class="container">
+	   <label for="uname"><b>Username</b></label>
+	   <input type="text"  formControlName="username" placeholder="username" required>
+ 
+	   <label for="psw"><b>Password</b></label>
+	   <input type="password"  formControlName="password"  placeholder="password">
+		 
+	   <span class="text-danger" *ngIf="errormsg">
+		{{errormsg}}
+	  </span >
+	 </div>
+	 <div class="row">
+		<div class="col-6">
+			<button   class="cancelbtn1" type="submit">Login</button>
+
+		</div>
+		<div class="col-6">
+			<button class="cancelbtn" type="reset">Rest</button>
+
+		</div>
+	 </div>
+ 
+	 
+   </form>
+</div>
+ <!-- </div> -->

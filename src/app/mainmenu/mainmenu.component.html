@@ -1,0 +1,7 @@
+<nav  style="background-color: #563d7c;padding:10px">
+  <a class="navbar-brand"  style="color: white" routerLink="/user/dashboard" >DashBoard</a>
+  <a class="navbar-brand" *ngIf="role=='auditor'" style="color: white"  routerLink="/user/auditor">Auditor Page</a>
+  <a   style="color: white;    float: right;" (click)="Logout()">Logout</a>
+  
+</nav>
+<router-outlet></router-outlet>

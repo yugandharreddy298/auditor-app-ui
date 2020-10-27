@@ -1,0 +1,37 @@
+<br>
+<br>
+<br>
+<h3>All Users</h3>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">S.No</th>
+      <th scope="col">Email</th>
+      <th scope="col">Name</th>
+      <th scope="col">Last Login</th>
+      <th scope="col">Ip Address</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users | paginate: { itemsPerPage: 2, currentPage: p }let i= index">
+      <th scope="row">{{i+1}}</th>
+      <td>{{user.email}}</td>
+      <td *ngIf="user?.username!=null">{{user?.username}}</td>
+      <td *ngIf="user?.username==null">
+        <b>--</b>
+      </td>
+
+      <td>{{user.lastLogin | date:'short'}}</td>
+      <td *ngIf="user?.IP!=null">{{user.IP}}</td>
+      <td *ngIf="user?.IP==null">
+        <b>--</b>
+      </td>
+
+
+    </tr>
+
+  </tbody>
+
+</table>
+<pagination-controls (pageChange)="next($event)"></pagination-controls>
